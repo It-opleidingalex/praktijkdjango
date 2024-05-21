@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .event-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .event-item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        .event-item h2 {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aankomende evenementen</h1>
+    <ul class="event-list">
+        {% for event in events %}
+            <li class="event-item">
+                <h2>{{ event.title }}</h2>
+                <p><strong>Start:</strong> {{ event.start_time }}</p>
+                <p><strong>Einde:</strong> {{ event.end_time }}</p>
+                <p>{{ event.description }}</p></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
